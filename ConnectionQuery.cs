@@ -11,7 +11,6 @@ namespace NiceKaffee
     public class ConnectionQuery
     {
         string connectionString = "server=52.78.127.115;port=57000;database=nicekaffeebillingsystem;uid=root;pwd=pass;";
-        //string connectionString = "server=127.0.0.1;port=3306;database=nicekaffeebillingsystem;uid=root;pwd=shia1931;";
         public MySqlConnection conn;
 
         public string Connection()
