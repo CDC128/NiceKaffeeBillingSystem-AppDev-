@@ -1,0 +1,147 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Ate.svg" />
+    <None Remove="Assets\Cashier\AllMenuBtn.png" />
+    <None Remove="Assets\Cashier\BlendedBtn.png" />
+    <None Remove="Assets\Cashier\BreadBtn.png" />
+    <None Remove="Assets\Cashier\charles.jpg" />
+    <None Remove="Assets\Cashier\CoffeeBtn.png" />
+    <None Remove="Assets\Cashier\DessertBtn.png" />
+    <None Remove="Assets\Cashier\ExitBtn.png" />
+    <None Remove="Assets\Cashier\LogoutBtn.png" />
+    <None Remove="Assets\Cashier\MenuBtn.png" />
+    <None Remove="Assets\Cashier\NonCoffeeBtn.png" />
+    <None Remove="Assets\Cashier\PastaBtn.png" />
+    <None Remove="Assets\Cashier\RoseSaucePasta.png" />
+    <None Remove="Assets\Cashier\TransactionBtn.png" />
+    <None Remove="Assets\ChangePassBtn.png" />
+    <None Remove="Assets\charles.jpg" />
+    <None Remove="Assets\HomeBtn.png" />
+    <None Remove="Assets\Items\10_Peach_Tea.png" />
+    <None Remove="Assets\Items\11_Premium_Matcha_Latte_Frappe.png" />
+    <None Remove="Assets\Items\12_Toffee_Nut_Frappe.png" />
+    <None Remove="Assets\Items\13_Mix_Berry_Yogurt_Smoothie.png" />
+    <None Remove="Assets\Items\14_Strawberry_Yogurt_Smoothie.png" />
+    <None Remove="Assets\Items\15_Yuzu_Yogurt_Smoothie.png" />
+    <None Remove="Assets\Items\16_Croffle.png" />
+    <None Remove="Assets\Items\17_Strawberry_and_Creme_Croffle.png" />
+    <None Remove="Assets\Items\18_Croissant.png" />
+    <None Remove="Assets\Items\19_Banana_Nutella_Croissant.png" />
+    <None Remove="Assets\Items\1_Iced_Vanilla_Latte.png" />
+    <None Remove="Assets\Items\20_Berry_Choux.png" />
+    <None Remove="Assets\Items\21_Mini_Peach_Shortcake.png" />
+    <None Remove="Assets\Items\22_Homemade_Strawberry_Shortcake.png" />
+    <None Remove="Assets\Items\23_Lotus_Biscoff_Cheesecake.png" />
+    <None Remove="Assets\Items\24_Banoffee.png" />
+    <None Remove="Assets\Items\25_Double_Chocolate_Tart.png" />
+    <None Remove="Assets\Items\26_Rose_Sauce_Pasta.png" />
+    <None Remove="Assets\Items\27_Aglio_Olio_Bacon_Sausage_Spaghetti.png" />
+    <None Remove="Assets\Items\28_Carbonara.png" />
+    <None Remove="Assets\Items\29_Chicken_Pesto_Pasta.png" />
+    <None Remove="Assets\Items\2_Hot_Latte.png" />
+    <None Remove="Assets\Items\30_Crispy_Gnocchi_With_Arugula_and_Prosciutto.png" />
+    <None Remove="Assets\Items\3_Espresso_Shot.png" />
+    <None Remove="Assets\Items\4_Iced_Americano_Yuzu.png" />
+    <None Remove="Assets\Items\5_Hot_Cappuccino.png" />
+    <None Remove="Assets\Items\6_Iced_Chocolate.png" />
+    <None Remove="Assets\Items\7_Iced_Premium_Matcha_Latte.png" />
+    <None Remove="Assets\Items\8_Iced_Hojicha_Latte.png" />
+    <None Remove="Assets\Items\9_Italian_Soda.png" />
+    <None Remove="Assets\LogoutBtn.png" />
+    <None Remove="Assets\ManageMenuBtn.png" />
+    <None Remove="Assets\ManageUsersBtn.png" />
+    <None Remove="Assets\MonthlySummaryBtn.png" />
+    <None Remove="Assets\Placeholder.png" />
+    <None Remove="Assets\ProductReportBtn.png" />
+    <None Remove="Assets\ReportsBtn.png" />
+    <None Remove="Assets\SalesBtn.png" />
+    <None Remove="Assets\SearchBtn.png" />
+    <None Remove="Assets\SettingsBtn.png" />
+    <None Remove="Assets\unknown.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts" Version="0.9.7" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="MySql.Data" Version="8.0.29" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Ate.svg" />
+    <Resource Include="Assets\Cashier\AllMenuBtn.png" />
+    <Resource Include="Assets\Cashier\BlendedBtn.png" />
+    <Resource Include="Assets\Cashier\BreadBtn.png" />
+    <Resource Include="Assets\Cashier\charles.jpg" />
+    <Resource Include="Assets\Cashier\CoffeeBtn.png" />
+    <Resource Include="Assets\Cashier\DessertBtn.png" />
+    <Resource Include="Assets\Cashier\ExitBtn.png" />
+    <Resource Include="Assets\Cashier\LogoutBtn.png" />
+    <Resource Include="Assets\Cashier\MenuBtn.png" />
+    <Resource Include="Assets\Cashier\NonCoffeeBtn.png" />
+    <Resource Include="Assets\Cashier\PastaBtn.png" />
+    <Resource Include="Assets\Cashier\RoseSaucePasta.png" />
+    <Resource Include="Assets\Cashier\TransactionBtn.png" />
+    <Resource Include="Assets\ChangePassBtn.png" />
+    <Resource Include="Assets\charles.jpg" />
+    <Resource Include="Assets\HomeBtn.png" />
+    <Resource Include="Assets\Items\1_Iced_Vanilla_Latte.png" />
+    <Resource Include="Assets\Items\2_Hot_Latte.png" />
+    <Resource Include="Assets\Items\3_Espresso_Shot.png" />
+    <Resource Include="Assets\Items\4_Iced_Americano_Yuzu.png" />
+    <Resource Include="Assets\Items\5_Hot_Cappuccino.png" />
+    <Resource Include="Assets\Items\6_Iced_Chocolate.png" />
+    <Resource Include="Assets\Items\7_Iced_Premium_Matcha_Latte.png" />
+    <Resource Include="Assets\Items\8_Iced_Hojicha_Latte.png" />
+    <Resource Include="Assets\Items\9_Italian_Soda.png" />
+    <Resource Include="Assets\Items\10_Peach_Tea.png" />
+    <Resource Include="Assets\Items\11_Premium_Matcha_Latte_Frappe.png" />
+    <Resource Include="Assets\Items\12_Toffee_Nut_Frappe.png" />
+    <Resource Include="Assets\Items\13_Mix_Berry_Yogurt_Smoothie.png" />
+    <Resource Include="Assets\Items\14_Strawberry_Yogurt_Smoothie.png" />
+    <Resource Include="Assets\Items\15_Yuzu_Yogurt_Smoothie.png" />
+    <Resource Include="Assets\Items\16_Croffle.png" />
+    <Resource Include="Assets\Items\17_Strawberry_and_Creme_Croffle.png" />
+    <Resource Include="Assets\Items\18_Croissant.png" />
+    <Resource Include="Assets\Items\19_Banana_Nutella_Croissant.png" />
+    <Resource Include="Assets\Items\20_Berry_Choux.png" />
+    <Resource Include="Assets\Items\21_Mini_Peach_Shortcake.png" />
+    <Resource Include="Assets\Items\22_Homemade_Strawberry_Shortcake.png" />
+    <Resource Include="Assets\Items\23_Lotus_Biscoff_Cheesecake.png" />
+    <Resource Include="Assets\Items\24_Banoffee.png" />
+    <Resource Include="Assets\Items\25_Double_Chocolate_Tart.png" />
+    <Resource Include="Assets\Items\26_Rose_Sauce_Pasta.png" />
+    <Resource Include="Assets\Items\27_Aglio_Olio_Bacon_Sausage_Spaghetti.png" />
+    <Resource Include="Assets\Items\28_Carbonara.png" />
+    <Resource Include="Assets\Items\29_Chicken_Pesto_Pasta.png" />
+    <Resource Include="Assets\Items\30_Crispy_Gnocchi_With_Arugula_and_Prosciutto.png" />
+    <Resource Include="Assets\LogoutBtn.png" />
+    <Resource Include="Assets\ManageMenuBtn.png" />
+    <Resource Include="Assets\ManageUsersBtn.png" />
+    <Resource Include="Assets\MonthlySummaryBtn.png" />
+    <Resource Include="Assets\Placeholder.png" />
+    <Resource Include="Assets\ProductReportBtn.png" />
+    <Resource Include="Assets\ReportsBtn.png" />
+    <Resource Include="Assets\SalesBtn.png" />
+    <Resource Include="Assets\SearchBtn.png" />
+    <Resource Include="Assets\SettingsBtn.png" />
+    <Resource Include="Assets\unknown.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Users\" />
+  </ItemGroup>
+
+</Project>

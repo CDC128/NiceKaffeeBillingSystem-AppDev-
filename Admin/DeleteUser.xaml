@@ -1,0 +1,71 @@
+﻿<Page x:Class="NiceKaffee.Admin.DeleteUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NiceKaffee.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DeleteUser">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" FontFamily="Berlin Sans FB" FontSize="20" Margin="10,0,0,0" Text="User No."/>
+            <TextBox Name="UserSearch" Style="{DynamicResource AdminTextbox}" Grid.Row="0" Grid.Column="1" Margin="10,10,-206,10" KeyUp="TextBox_KeyUp"></TextBox>
+            <TextBlock VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" FontFamily="Berlin Sans FB" FontSize="20" Margin="10,7,0,0" Text="User Details"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Border Background="white" Grid.Row="3" CornerRadius="10" Margin="12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Name="UserImage" Grid.Column="0" Margin="15" CornerRadius="10">
+                        <Border.Background>
+                            <ImageBrush/>
+                        </Border.Background>
+                    </Border>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Label Name="UserName"  Grid.Row="0" FontFamily="Berlin Sans FB" FontSize="18" Margin="0,10,0,0"></Label>
+                        <Label Name="Role"  Grid.Row="1" FontFamily="Berlin Sans FB" FontSize="14"></Label>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Button x:Name="DeleteMenuBtn1" Content="Delete User" VerticalAlignment="Center"  Background="#843C0C" BorderBrush="Transparent" Margin="5,0,10,0" Template="{DynamicResource BrownRoundBtn}" Foreground="White" FontSize="14" FontFamily="Berlin Sans FB" Height="41" Click="DeleteMenuBtn1_Click"/>
+        </Grid>
+
+        
+    </Grid>
+</Page>
