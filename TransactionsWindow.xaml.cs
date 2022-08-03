@@ -33,7 +33,7 @@ namespace NiceKaffee
             uname = username;
             urole = role;
             conn.OpenConnection();
-            TransactionsTable = conn.ShowDataInGridView("SELECT idTransactions as ID, Date, TotalPrice as Price, AmountPaid as Paid FROM transactions");
+            TransactionsTable = conn.ShowDataInGridView("SELECT idTransactions as ID, Date, TotalPrice as Price, AmountPaid as Paid FROM transactions ORDER BY Date Desc");
             conn.CloseConnection();
             TransactionsDG.ItemsSource = TransactionsTable.DefaultView;
             uuid = UID;
@@ -60,11 +60,8 @@ namespace NiceKaffee
             try
             {
                 conn.OpenConnection();
-                MySqlCommand cmd = new MySqlCommand("DELETE FROM transactions where idTransactions = @id", conn.conn);
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@id", IdDeleteTxt.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Deleted Successfully");
+                TransactionLogin tl = new TransactionLogin(IdDeleteTxt.Text);
+                tl.Show();
                 TransactionsTable = conn.ShowDataInGridView("SELECT idTransactions as ID, Date, TotalPrice as Price, AmountPaid as Paid FROM transactions");
                 conn.CloseConnection();
                 TransactionsDG.ItemsSource = TransactionsTable.DefaultView;
