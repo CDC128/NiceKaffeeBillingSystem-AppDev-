@@ -40,20 +40,29 @@ namespace NiceKaffee
                 reader.Read();
                 if (reader[0].ToString() == "Admin")
                 {
-                    MySqlCommand cmd2 = new MySqlCommand("DELETE FROM transactions where idTransactions = @id", conn.conn);
-                    cmd2.Parameters.Clear();
-                    cmd2.Parameters.AddWithValue("@id", toDelete);
-                    cmd2.ExecuteNonQuery();
-                    MessageBox.Show("Deleted Successfully");
+                    try
+                    {
+                        conn.OpenConnection();
+                        MySqlCommand cmd2 = new MySqlCommand("DELETE FROM transactions where idTransactions = @id", conn.conn);
+                        cmd2.Parameters.Clear();
+                        cmd2.Parameters.AddWithValue("@id", toDelete);
+                        cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Deleted Successfully");
+                        conn.CloseConnection();
+                    }
+                    catch(Exception es)
+                    {
+                        MessageBox.Show(es.Message + "Error on delete");
+                    }
                 }
-                this.Close();
-                reader.Close();
                 conn.CloseConnection();
+                this.Close();
             }
             catch(Exception es)
             {
-                MessageBox.Show(es.Message);
+                MessageBox.Show(es.Message + "Error on login");
             }
+            
         }
     }
 }

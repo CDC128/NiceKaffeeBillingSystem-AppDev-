@@ -63,7 +63,9 @@ namespace NiceKaffee
         {
             MySqlCommand cmd = new MySqlCommand(Query_, conn);
             DataTable ds = new DataTable();
-            ds.Load(cmd.ExecuteReader());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            ds.Load(reader);
+            reader.Close();
             return ds;
         }
     }

@@ -33,7 +33,7 @@ namespace NiceKaffee
             uname = username;
             urole = role;
             conn.OpenConnection();
-            TransactionsTable = conn.ShowDataInGridView("SELECT idTransactions as ID, Date, TotalPrice as Price, AmountPaid as Paid FROM transactions ORDER BY Date Desc");
+            TransactionsTable = conn.ShowDataInGridView("SELECT idTransactions as ID, Date, TotalPrice as Price, AmountPaid as Paid FROM transactions ORDER BY ID Desc");
             conn.CloseConnection();
             TransactionsDG.ItemsSource = TransactionsTable.DefaultView;
             uuid = UID;
@@ -62,8 +62,8 @@ namespace NiceKaffee
             {
                 conn.OpenConnection();
                 TransactionLogin tl = new TransactionLogin(IdDeleteTxt.Text);
-                tl.Show();
-                TransactionsTable = conn.ShowDataInGridView("SELECT idTransactions as ID, Date, TotalPrice as Price, AmountPaid as Paid FROM transactions");
+                tl.ShowDialog();
+                TransactionsTable = conn.ShowDataInGridView("SELECT idTransactions as ID, Date, TotalPrice as Price, AmountPaid as Paid FROM transactions ORDER BY ID Desc");
                 conn.CloseConnection();
                 TransactionsDG.ItemsSource = TransactionsTable.DefaultView;
                 IdDeleteTxt.Clear();
