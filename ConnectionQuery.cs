@@ -10,17 +10,38 @@ namespace NiceKaffee
 {
     public class ConnectionQuery
     {
-        string connectionString = "server=52.78.127.115;port=57000;database=nicekaffeebillingsystem;uid=root;pwd=pass;";
+        string connectionString1 = "server=52.78.127.115;port=57000;database=nicekaffeebillingsystem;uid=root;pwd=pass;";
+        string connectionString2 = "server='0.tcp.ap.ngrok.io';port=19344;database=nicekaffeebillingsystem;uid=root;pwd=shia1931;";
+        string connectionString = "";
         public MySqlConnection conn;
+
+        public string TestConn()
+        {
+            try {
+                conn = new MySqlConnection(connectionString2);
+                conn.Open();
+                conn.Close();
+                connectionString = connectionString2;
+            }
+            catch(Exception e)
+            {
+                conn = new MySqlConnection(connectionString1);
+                conn.Open();
+                conn.Close();
+                connectionString = connectionString1;
+            }
+            
+            return connectionString;
+        }
 
         public string Connection()
         {
-            return connectionString;
+            return TestConn();
         }
 
         public void OpenConnection()
         {
-            conn = new MySqlConnection(connectionString);
+            conn = new MySqlConnection(TestConn());
             conn.Open();
         }
         public void CloseConnection()

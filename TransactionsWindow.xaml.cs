@@ -37,6 +37,14 @@ namespace NiceKaffee
             conn.CloseConnection();
             TransactionsDG.ItemsSource = TransactionsTable.DefaultView;
             uuid = UID;
+            uuid = UID;
+            conn.OpenConnection();
+            MySqlDataReader reader = conn.DataReader("SELECT Image FROM user WHERE UID = " + uuid.ToString());
+            reader.Read();
+            Image dp = new Image();
+            dp.Source = (new BitmapImage(new Uri(Environment.CurrentDirectory + "/Assets/Users/" + reader[0].ToString())));
+            ProfilePicUser.Child = dp;
+            conn.CloseConnection();
         }
 
         private void btnView_Click(object sender, RoutedEventArgs e)

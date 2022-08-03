@@ -40,7 +40,7 @@ namespace NiceKaffee
                 reader.Read();
                 MessageBox.Show(reader[0].ToString() + " Logged In"); 
                 if(reader[0].ToString() == "Admin") {
-                    MainWindow home = new MainWindow();
+                    MainWindow home = new MainWindow(reader[1].ToString());
                     home.Show();
                 }
                 else

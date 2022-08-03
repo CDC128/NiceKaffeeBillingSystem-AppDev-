@@ -51,20 +51,26 @@ namespace NiceKaffee.Admin
             try
             {
                 FileInfo fi = new FileInfo(ItemImageUpload.FileName);
+
+                conn.OpenConnection();
+
                 conn.OpenConnection();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO items(itemName,Category,Price) VALUES" +
                     "(@name,@categ,@price)", conn.conn);
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@name", ItemName.Text);
-                cmd.Parameters.AddWithValue("@price", Price.Text);
                 cmd.Parameters.AddWithValue("@categ", categ);
+                cmd.Parameters.AddWithValue("@price", Price.Text);
                 cmd.ExecuteNonQuery();
-                MySqlCommand cmd2 = new MySqlCommand("UPDATE items SET Image = @image WHERE idItems = @id");
-                cmd.Parameters.Clear();
-                cmd2.Parameters.AddWithValue("@image", cmd.LastInsertedId.ToString() + "_" + ItemName.Text.Replace(' ', '_') + fi.Extension);
-                cmd2.Parameters.AddWithValue("@id", cmd.LastInsertedId);
+                int itemID = Int32.Parse(cmd.LastInsertedId.ToString());
+
+                MySqlCommand cmd2 = new MySqlCommand("UPDATE items SET Image = @image WHERE idItems = @id", conn.conn);
+                cmd2.Parameters.Clear();
+                cmd2.Parameters.AddWithValue("@image", itemID + "_" + ItemName.Text.Replace(' ', '_') + fi.Extension);
+                cmd2.Parameters.AddWithValue("@id", itemID);
                 cmd2.ExecuteNonQuery();
-                MessageBox.Show("Item Created Successfully!");
+                MessageBox.Show("Item Added Successfully!");
+
                 conn.CloseConnection();
 
                 System.IO.Directory.CreateDirectory(Environment.CurrentDirectory + "/Assets/Items/");

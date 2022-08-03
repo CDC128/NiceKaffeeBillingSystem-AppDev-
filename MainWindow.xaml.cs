@@ -22,11 +22,12 @@ namespace NiceKaffee
     public partial class MainWindow : Window
     {
         ConnectionQuery conn = new ConnectionQuery();
-        public MainWindow()
+        public string uuid { get; set; }
+        public MainWindow(string UID)
         {
             InitializeComponent();
             PageContent.Content = new HomeViewMenu();
-
+            uuid = UID;
         }
 
         private void ReportsBtn_Click(object sender, RoutedEventArgs e)
@@ -49,7 +50,7 @@ namespace NiceKaffee
 
         private void SettingsBtn_Click(object sender, RoutedEventArgs e)
         {
-            PageContent.Content = new Settings();         
+            PageContent.Content = new Settings(uuid);         
         }
     }
 }

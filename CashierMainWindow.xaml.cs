@@ -28,7 +28,7 @@ namespace NiceKaffee
 
         ConnectionQuery conn = new ConnectionQuery();
         
-        public CashierMainWindow(string username,string role, string UID)
+        public CashierMainWindow(string username, string role, string UID)
         {
             InitializeComponent();
             dtOrdersTable = OrdersTable();
@@ -37,7 +37,13 @@ namespace NiceKaffee
             uname = username;
             urole = role;
             uuid = UID;
-
+            conn.OpenConnection();
+            MySqlDataReader reader = conn.DataReader("SELECT Image FROM user WHERE UID = " + uuid.ToString());
+            reader.Read();
+            Image dp = new Image();
+            dp.Source = (new BitmapImage(new Uri(Environment.CurrentDirectory + "/Assets/Users/" + reader[0].ToString())));
+            ProfilePicUser.Child = dp;
+            conn.CloseConnection();
         }
         public DataTable dtOrdersTable { get; set; }
 
@@ -161,7 +167,7 @@ namespace NiceKaffee
                 {
                     results =
                     conn.DataReader("SELECT items.idItems, items.itemName, category.Category, items.Price, items.Image " +
-                    "FROM items JOIN category on items.Category = category.idCategory WHERE items.Category");
+                    "FROM items JOIN category on items.Category = category.idCategory");
                 }
                 else
                 {
@@ -329,7 +335,6 @@ namespace NiceKaffee
 
         private void TransactionBtn_Click(object sender, RoutedEventArgs e)
         {
-
             TransactionsWindow TransacWin = new TransactionsWindow(uname,urole,uuid);
             TransacWin.Show();
             this.Close();

@@ -321,10 +321,8 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Border Grid.Column="0" Margin="11" CornerRadius="10">
-                        <Border.Background>
-                            <ImageBrush ImageSource="Assets/Cashier/charles.jpg" />
-                        </Border.Background>
+                    <Border Name="ProfilePicUser" Grid.Column="0" Margin="11" CornerRadius="10">
+                        
                     </Border>
 
                     <Grid Grid.Column="1" HorizontalAlignment="Right" Width="136">

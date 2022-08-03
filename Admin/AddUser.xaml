@@ -49,7 +49,7 @@
                 <PasswordBox Name="Password" Style="{DynamicResource AdminPasswordBox}" Grid.Row="2" Margin="10,10,20,10"></PasswordBox>
                 <TextBox Name="Role" Style="{DynamicResource AdminTextbox}" Grid.Row="3" Margin="10,10,20,10"></TextBox>
                 <TextBox Name="CNum" Style="{DynamicResource AdminTextbox}" Grid.Row="4" Margin="10,10,20,10"></TextBox>
-                <Button x:Name="UpdateMenuBtn1" Grid.Row="5" Content="Update User Item" Background="#843C0C" BorderBrush="Transparent" Margin="5,5,20,5" Template="{DynamicResource BrownRoundBtn}" Foreground="White" FontSize="14" FontFamily="Berlin Sans FB" Click="UpdateMenuBtn1_Click"/>
+                <Button x:Name="UpdateMenuBtn1" Grid.Row="5" Content="Add User" Background="#843C0C" BorderBrush="Transparent" Margin="5,5,20,5" Template="{DynamicResource BrownRoundBtn}" Foreground="White" FontSize="14" FontFamily="Berlin Sans FB" Click="UpdateMenuBtn1_Click"/>
             </Grid>
         </Grid>
     </Grid>
