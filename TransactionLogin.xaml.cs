@@ -29,7 +29,6 @@ namespace NiceKaffee
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            conn.OpenConnection();
             try
             {
                 conn.OpenConnection();
@@ -55,6 +54,6 @@ namespace NiceKaffee
             {
                 MessageBox.Show(es.Message);
             }
-            }
+        }
     }
 }

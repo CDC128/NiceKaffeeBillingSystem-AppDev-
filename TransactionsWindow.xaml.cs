@@ -44,6 +44,7 @@ namespace NiceKaffee
             Image dp = new Image();
             dp.Source = (new BitmapImage(new Uri(Environment.CurrentDirectory + "/Assets/Users/" + reader[0].ToString())));
             ProfilePicUser.Child = dp;
+            reader.Close();
             conn.CloseConnection();
         }
 
